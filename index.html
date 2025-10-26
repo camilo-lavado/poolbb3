@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asignador de equipos - Blood Bowl 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Asignador aleatorio de equipos</h1>
+        <p>
+          Pega el listado de jugadores y asigna un equipo de Blood Bowl 3 al azar.
+        </p>
+      </header>
+      <section class="app__section">
+        <label class="field">
+          <span class="field__label">Jugadores (uno por línea)</span>
+          <textarea
+            id="playerInput"
+            class="field__input"
+            rows="8"
+            placeholder="Ejemplo:\nAna\nBruno\nCarla"
+          ></textarea>
+        </label>
+        <div class="actions">
+          <button id="assignButton" class="button" type="button">Asignar equipos</button>
+          <button id="resetButton" class="button button--secondary" type="button">Limpiar</button>
+        </div>
+      </section>
+      <section class="app__section">
+        <h2>Resultados</h2>
+        <p id="resultsPlaceholder" class="placeholder">
+          Los emparejamientos aparecerán aquí.
+        </p>
+        <table id="resultsTable" class="results" hidden>
+          <thead>
+            <tr>
+              <th>Jugador</th>
+              <th>Equipo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="app__footer">
+      <small>
+        Equipos incluidos: Amazons, Black Orcs, Chaos Chosen, Chaos Renegades, Dark Elves, Dwarfs, Elven Union, Goblin, Humans, Imperial Nobility, Khorne, Lizardmen, Necromantic Horror, Nurgle, Old World Alliance, Orcs, Shambling Undead, Skaven, Underworld Denizens y Wood Elves.
+      </small>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
