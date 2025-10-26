@@ -16,7 +16,7 @@
           segundos.
         </p>
       </header>
-      <section class="app__section app__section--grid">
+      <section class="app__section app__section--grid" id="setupSection">
         <div class="panel">
           <label class="field" for="playerInput">
             <span class="field__label">Jugadores (uno por línea)</span>
@@ -42,10 +42,21 @@
         <aside class="panel panel--accent">
           <h2>Equipos incluidos</h2>
           <p class="hint">Iconos orientativos para cada facción.</p>
-          <ul class="team-list" id="teamList"></ul>
+          <button
+            id="toggleTeamList"
+            class="button button--ghost"
+            type="button"
+            aria-expanded="false"
+            aria-controls="teamListPanel"
+          >
+            Mostrar listado
+          </button>
+          <div id="teamListPanel" class="team-list__container" hidden>
+            <ul class="team-list" id="teamList"></ul>
+          </div>
         </aside>
       </section>
-      <section class="app__section">
+      <section class="app__section" id="resultsSection">
         <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
         <h2>Resultados</h2>
         <p id="resultsPlaceholder" class="placeholder">
@@ -60,6 +71,17 @@
           </thead>
           <tbody></tbody>
         </table>
+        <div id="resultsActions" class="results-actions" hidden>
+          <button id="printButton" class="button button--outline" type="button">
+            Imprimir
+          </button>
+          <button id="rerollButton" class="button" type="button">
+            Volver a randomizar
+          </button>
+          <button id="startOverButton" class="button button--secondary" type="button">
+            Empezar de cero
+          </button>
+        </div>
       </section>
     </main>
     <footer class="app__footer">
