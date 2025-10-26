@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asignador de equipos - Blood Bowl 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" role="application">
+      <header class="app__header">
+        <div class="app__badge">Blood Bowl 3</div>
+        <h1>Asignador aleatorio de equipos</h1>
+        <p>
+          Pega el listado de jugadores y reparte equipos únicos para tu torneo en
+          segundos.
+        </p>
+      </header>
+      <section class="app__section app__section--grid">
+        <div class="panel">
+          <label class="field" for="playerInput">
+            <span class="field__label">Jugadores (uno por línea)</span>
+            <textarea
+              id="playerInput"
+              class="field__input"
+              rows="8"
+              placeholder="Ejemplo:\nAna\nBruno\nCarla"
+            ></textarea>
+          </label>
+          <div class="actions">
+            <button id="assignButton" class="button" type="button">
+              Asignar equipos
+            </button>
+            <button id="resetButton" class="button button--secondary" type="button">
+              Limpiar
+            </button>
+          </div>
+          <p class="hint">
+            Equipos disponibles: <span id="teamCount"></span>. No se repetirán en un mismo torneo.
+          </p>
+        </div>
+        <aside class="panel panel--accent">
+          <h2>Equipos incluidos</h2>
+          <p class="hint">Iconos orientativos para cada facción.</p>
+          <ul class="team-list" id="teamList"></ul>
+        </aside>
+      </section>
+      <section class="app__section">
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        <h2>Resultados</h2>
+        <p id="resultsPlaceholder" class="placeholder">
+          Los emparejamientos aparecerán aquí.
+        </p>
+        <table id="resultsTable" class="results" hidden>
+          <thead>
+            <tr>
+              <th>Jugador</th>
+              <th>Equipo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="app__footer">
+      <small>Última actualización de equipos: septiembre 2025.</small>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
