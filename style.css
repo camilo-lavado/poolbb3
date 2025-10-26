@@ -239,9 +239,10 @@ body {
 }
 
 .team-list__container--active {
-  max-height: 420px;
+  max-height: min(70vh, 640px);
   opacity: 1;
   transform: translateY(0);
+  overflow-y: auto;
 }
 
 .team-pill {
